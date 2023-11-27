@@ -64,3 +64,9 @@ type Human = Extract<Animal, 'Cat' | 'Dog'>; // Extract는 추출하는 것
 // Omit은 Pick과 Exclude의 조합이다.
 type O<T, S extends keyof any> = Pick<T, Exclude<keyof T, S>> 
 // S extends keyof any => string, number, symbol
+
+function sum(a: number, b: number): number {
+  return a + b;
+}
+
+type ReturnNum = ReturnType<typeof sum> // number
